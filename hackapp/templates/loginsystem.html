@@ -1,0 +1,17 @@
+<form method="POST" action="{% url 'loginsystem' %}">
+    {% csrf_token %}
+    <div class="user-box">
+      <input type="text" name="username" required="">
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="password" required="">
+      <label>Password</label>
+    </div>
+      <div class="incorrect-password">
+        <p>{{ error }}</p>
+      </div>
+    <button type="submit">Login
+    </button>
+    <div class="signup-link">Don't have an account? <a href="{% url 'signupsystem' %}">Signup</a></div>
+</form>
